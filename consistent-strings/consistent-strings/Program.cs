@@ -17,9 +17,9 @@ namespace consistent_strings
 
             //Console.WriteLine(C);
 
-            //Console.WriteLine(IsGrouped("AABCD"));
+            Console.WriteLine(IsGrouped("ABCDD"));
 
-            Count(1, 20);
+            //Count(1, 20);
         }
         public static int ConsistentStrings(string s, string[] words)
         {
@@ -41,18 +41,21 @@ namespace consistent_strings
 
         public static bool IsGrouped(string s)
         {
-            bool result = true;
+            bool result = false;
             for (int i = 0; i < s.Length - 1; i++)
             {
-                char C;
-                if (s[i] == s[i + 1])
+                char C = s[i];
+                for(int j = i+1; j<s.Length; j++)
                 {
-                    C = s[i];
-                    result = true;
+                    if (C == s[j])
+                    {
+                        result = true;
+                    }
                 }
-                else
+
+                if (result)
                 {
-                    result = false;
+
                 }
             }
             return result;
