@@ -6,6 +6,8 @@ namespace consistent_strings
      * https://leetcode.com/problems/count-the-number-of-consistent-strings/
      * 
      * https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=36
+     * 
+     * count-the-number-of-consistent-strings  Grouped count 3n+1
      */
 
     class Program
@@ -17,9 +19,9 @@ namespace consistent_strings
 
             //Console.WriteLine(C);
 
-            Console.WriteLine(IsGrouped("ABCDD"));
+            //Console.WriteLine(IsGrouped("ABCDD"));
 
-            //Count(1, 20);
+            Count(1, 10);
         }
         public static int ConsistentStrings(string s, string[] words)
         {
@@ -63,23 +65,36 @@ namespace consistent_strings
 
         public static void Count(int x, int n)
         {
-            int count = 1;
-            int tempN = n;
+            int count = 0;
+            int result = 0;
             for(int i=x; i<=n; i++)
             {
-                if (i == 1)
-                    break;
-                if(n%2 == 0)
+                count = 1;
+                int num = i;
+                while (num >= 1)
                 {
-                    n = n / 2;
+                    if (num == 1)
+                    {
+                        break;
+                    }
+                    if (num % 2 == 0)
+                    {
+                        num = num / 2;
+                    }
+                    else
+                    {
+                        num = 3 * num + 1;
+                    }
+                    count++;
                 }
-                else
+                Console.WriteLine("Number {0} Count {1}",i,count);
+                if (result < count)
                 {
-                    n=3*n + 1;
+                    result = count;
                 }
-                count++;
+                    
             }
-            Console.WriteLine(count);
+            Console.WriteLine(result);
         }
     }
 }
