@@ -10,10 +10,13 @@ namespace palindrome
             var s = new Solution();
             // s.IsPalindrome();
             //  s.ValidPalindrome();
-            string my_p = "race  car";
-            my_p = my_p.Replace(" ", "");
-            var r = s.MyPalindrome(my_p, 0, my_p.Length-1);
-            Console.WriteLine(r);
+
+            //string my_p = "race  car";
+            //my_p = my_p.Replace(" ", "");
+            //var r = s.MyPalindrome(my_p, 0, my_p.Length-1);
+            //Console.WriteLine(r);
+
+            s.SubSecuence();
         }
     }
 
@@ -77,5 +80,34 @@ namespace palindrome
             return true;
         }
 
+        public void SubSecuence()
+        {
+            string S = "bbbab";
+            char RC=char.MinValue;
+            int Rcount = 0;
+
+            for (int i=0; i<S.Length; i++)
+            {
+                char C = S[i];
+                int count = 0;
+                for(int j=0;j<S.Length; j++)
+                {
+                    if (C == S[j])
+                        count++;
+                }
+
+                if(count > Rcount)
+                {
+                    Rcount = count;
+                    RC = C;
+                }
+            }
+
+            char[] res = new char[Rcount];
+            for (int i = 0; i < Rcount; i++)
+                res[i] = RC;
+
+            Console.WriteLine("{0} {1} {2}", RC, Rcount, new string(res));
+        }
     }
 }
