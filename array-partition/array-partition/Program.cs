@@ -83,5 +83,20 @@ namespace array_partition
             }
             Console.WriteLine(result);
         }
+        public static void Pramid(int x)
+        {
+            for (int i = 0; i < x; i++)
+            {
+                for(int j = 0; j <= x-i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j <= 2*i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
