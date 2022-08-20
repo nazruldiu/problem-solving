@@ -3,7 +3,7 @@
 namespace array_partition
 {
     /*
-     * https://leetcode.com/problems/array-partition-i/
+     * https://leetcode.com/problems/array-partition/
      * Bubble Sort
      * Linear Search
      * Binary Search
