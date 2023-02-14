@@ -30,7 +30,7 @@ internal class Program
 
         //Console.WriteLine(myResult);
 
-        MyDelegateMethod(calculate,5,5);   // Passing method as a parameter using C# delegate.
+        MyDelegateMethod(calculate, 5, 5);   // Passing method as a parameter using C# delegate.
 
         Calculate calculate1 = Sub;
 
@@ -39,10 +39,7 @@ internal class Program
         Console.ReadLine();
     }
 
-    static int Sum(int x, int y)
-    {
-        return x + y;
-    }
+    static int Sum(int x, int y) =>(x + y); // Lambda expression Left side parameter and right side expression.
 
     static int Sub(int x, int y)
     {
