@@ -25,11 +25,11 @@ internal class Program
         //                .Where(x => x.Count() == 1)
         //                .Select(x => x.Key);
 
-        int[] myNum = { 1, 2, 2, 3, 4, 4, 5 , 6, 6};
+        //int[] myNum = { 1, 2, 2, 3, 4, 4, 5 , 6, 6};
 
-        var numResult = myNum.Min(x => x);
+        //var numResult = myNum.Min(x => x);
 
-        Console.WriteLine(numResult);
+        //Console.WriteLine(numResult);
 
         //string myCar = "madam";
         //char[] myArray = myCar.ToCharArray();
@@ -44,14 +44,19 @@ internal class Program
         //    Console.WriteLine("not palindrome");
         //}
 
-        //string myLine = "I live in Dhaka!";
-        //string[] myStringArr = myLine.Split(' ').ToArray();
+        string myLine = "I live in Dhaka!";
+        string[] myStringArr = myLine.Split(' ').ToArray();
         //Array.Reverse(myStringArr);
 
         //for(int i=0; i< myStringArr.Length; i++)
         //{
         //    Console.Write(myStringArr[i]+" ");
         //}
+
+        for(int i=myStringArr.Length-1; i>=0; i--)
+        {
+            Console.Write(myStringArr[i]+ " ");
+        }
 
         /* To point or initialize a method to a delegate signature must need to be equal 
          * that means (a) delegate return type and method must be same and (b) parameters need to be same also.
