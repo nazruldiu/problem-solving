@@ -3,7 +3,7 @@
 namespace array_partition
 {
     /*
-     * https://leetcode.com/problems/array-partition-i/
+     * https://leetcode.com/problems/array-partition/
      * Bubble Sort
      * Linear Search
      * Binary Search
@@ -15,8 +15,8 @@ namespace array_partition
             int[] num = { 1, 4, 3, 2, 5 };
 
             //Console.WriteLine(sum(num));
-            //Sort(num);
-            LinearSearch(num, 3);
+            Sort(num);
+            //LinearSearch(num, 3);
         }
 
         public static int sum(int[] number)
@@ -32,15 +32,14 @@ namespace array_partition
 
         public static void Sort(int[] number)
         {
-            int temp;
             for (int i = 0; i < number.Length; i++)
             {
-                temp = number[i];
-                for (int j = i+1; j < number.Length; j++)
+                for (int j = 0; j < number.Length - 1; j++)
                 {
-                    if (number[i] > number[j])
+                    if (number[j] > number[j + 1])
                     {
-                        number[i] = number[j];
+                        int temp = number[j + 1];
+                        number[j + 1] = number[j];
                         number[j] = temp;
                     }
                 }
@@ -82,6 +81,21 @@ namespace array_partition
                     r = m - 1;
             }
             Console.WriteLine(result);
+        }
+        public static void Pramid(int x)
+        {
+            for (int i = 0; i < x; i++)
+            {
+                for(int j = 0; j <= x-i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j <= 2*i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
